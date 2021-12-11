@@ -65,8 +65,8 @@ class ProductController extends Controller
     public function put(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'description' => 'required',
+            'name' => 'required|max:255',
+            'description' => 'required|max:255',
             'buying_price' => 'required|integer|min:0',
             'selling_price' => 'required|integer|min:0',
             'picture' => 'nullable|file|image|max:1024'

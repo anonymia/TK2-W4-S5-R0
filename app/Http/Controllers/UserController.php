@@ -22,7 +22,7 @@ class UserController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|max:255',
             'place_of_birth' => 'required',
             'date_of_birth' => 'required|date|before:today',
             'gender' => 'required|boolean',
