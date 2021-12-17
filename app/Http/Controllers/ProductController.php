@@ -6,6 +6,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 class ProductController extends Controller
@@ -20,8 +21,8 @@ class ProductController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string', 'max:255', 'unique'],
+            'name' => ['required', 'string', 'max:255', Rule::unique('products')],
+            'description' => ['required', 'string', 'max:255'],
             'buying_price' => ['required', 'integer', 'min:0'],
             'selling_price' => ['required', 'integer', 'min:0'],
             'picture' => ['required', 'file', 'image', 'max:1024']
@@ -61,8 +62,8 @@ class ProductController extends Controller
     public function put(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string', 'max:255', 'unique'],
+            'name' => ['required', 'string', 'max:255', Rule::unique('products')],
+            'description' => ['required', 'string', 'max:255'],
             'buying_price' => ['required', 'integer', 'min:0'],
             'selling_price' => ['required', 'integer', 'min:0'],
             'picture' => ['nullable', 'file', 'image', 'max:1024']
