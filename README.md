@@ -54,3 +54,20 @@ root@f154926725ba:/app# php artisan make:migration user
 root@f154926725ba:/app# php artisan migrate
 root@f154926725ba:/app# php artisan serve --host 0.0.0.0
 ```
+
+<br>
+
+```bash
+$ heroku login
+$ heroku git:remote -a <app>
+$ git push heroku master
+$ heroku config:set APP_NAME="Aplikasi Pendataan Produk"
+$ heroku config:set APP_KEY=<key>
+$ heroku config:set DB_CONNECTION=mysql
+$ heroku config:set DB_HOST=<host>
+$ heroku config:set DB_PORT=<port>
+$ heroku config:set DB_DATABASE=<database>
+$ heroku config:set DB_USERNAME=<username>
+$ heroku config:set DB_PASSWORD=<password>
+$ heroku run php artisan migrate
+```
