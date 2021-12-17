@@ -8,6 +8,7 @@
 | Email | Password |
 | ---- | --- |
 | binus@binus.edu | binustk2 |
+| user@binus.edu | binustk2 |
 
 <br>
 
