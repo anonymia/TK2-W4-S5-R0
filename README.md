@@ -1,5 +1,5 @@
 # Web Programming
-### OS1 - 2112 - TICA - TK1-W3-S4-R0
+### OS1 - 2112 - TICA - TK2-W4-S5-R0
 
 ## Aplikasi Pendataan Produk - Team 2
 
@@ -7,7 +7,7 @@
 
 | Email | Password |
 | ---- | --- |
-| binus@binus.edu | binustk1 |
+| binus@binus.edu | binustk2 |
 
 <br>
 
@@ -36,7 +36,7 @@ $ docker inspect mysql | grep IPAddress
 DB_CONNECTION=mysql
 DB_HOST=172.18.0.2
 DB_PORT=3306
-DB_DATABASE=tk1
+DB_DATABASE=tk2
 DB_USERNAME=binus
 DB_PASSWORD=binus
 ```

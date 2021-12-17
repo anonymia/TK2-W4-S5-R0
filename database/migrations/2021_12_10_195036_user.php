@@ -13,14 +13,11 @@ class User extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-            $table->string('place_of_birth');
-            $table->date('date_of_birth');
-            $table->boolean('gender');
-            $table->string('password');
-            $table->string('email');
+        Schema::table('users', function (Blueprint $table) {
+            $table->enum('role',  ['user', 'admin'])->default('admin');
+            $table->string('place_of_birth')->default('');
+            $table->date('date_of_birth')->default('2000-1-1');
+            $table->boolean('gender')->default(false);
         });
     }
 
@@ -31,6 +28,11 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
+            $table->dropColumn('place_of_birth');
+            $table->dropColumn('date_of_birth');
+            $table->dropColumn('gender');
+        });
     }
 }
